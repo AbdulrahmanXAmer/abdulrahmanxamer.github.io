@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abdulrahman Amer — Software Engineer · Solutions Architect · DevOps · ML</title>
+<meta name="description" content="Software engineer, solutions architect, DevOps, and ML. Platform, cloud, and integrations.">
+<meta name="theme-color" content="#FAF8F4" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#161511" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<meta property="og:title" content="Abdulrahman Amer — Software Engineer · Solutions Architect · DevOps · ML">
+<meta property="og:description" content="6+ years owning systems end-to-end: event-driven platforms serving 20k+ hotels, HIPAA-compliant cloud, self-hosted ML.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="profile.jpg">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90' font-family='Georgia'%3EA%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:light dark;
+  --paper:#FAF8F4;
+  --paper-2:#F3F0E9;
+  --paper-3:#EAE6DC;
+  --ink:#161511;
+  --ink-soft:#5C574C;
+  --line:#DBD5C8;
+  --blue:#2038EE;
+  --serif:'Instrument Serif',Georgia,serif;
+  --sans:'Inter',system-ui,sans-serif;
+  --mono:'IBM Plex Mono',monospace;
+}
+@media(prefers-color-scheme:dark){
+  :root{
+    --paper:#161511;
+    --paper-2:#1D1B16;
+    --paper-3:#26231C;
+    --ink:#F3EFE6;
+    --ink-soft:#A39B89;
+    --line:#332F26;
+    --blue:#5A6CFF;
+  }
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;background:var(--paper)}
+body{
+  font-family:var(--sans);
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+  font-size:16px;
+}
+::selection{background:var(--blue);color:#fff}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:920px;margin:0 auto;padding:0 24px}
+
+/* ---- eyebrow token ---- */
+.token{
+  font-family:var(--mono);
+  font-size:12px;
+  letter-spacing:.02em;
+  color:var(--blue);
+  font-weight:500;
+}
+.token .brk{color:var(--ink-soft)}
+
+/* ---- top bar ---- */
+.topbar{
+  border-bottom:1px solid var(--line);
+  background:var(--paper);
+  position:sticky;top:0;z-index:50;
+}
+.topbar .wrap{
+  display:flex;align-items:center;justify-content:space-between;
+  height:56px;
+}
+.brand{font-family:var(--mono);font-size:13px;font-weight:500;letter-spacing:-.01em}
+.brand .dot{color:var(--blue)}
+.topnav{display:flex;gap:22px;font-family:var(--mono);font-size:12.5px;color:var(--ink-soft)}
+.topnav a:hover{color:var(--ink)}
+@media(max-width:600px){.topnav{display:none}}
+
+/* ---- hero ---- */
+.hero{padding:76px 0 60px;border-bottom:1px solid var(--line)}
+.hero-grid{
+  display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center;
+}
+.hero-photo{
+  width:210px;height:210px;border-radius:50%;
+  overflow:hidden;position:relative;flex-shrink:0;
+  border:1px solid var(--line);background:var(--paper-2);
+  display:flex;align-items:center;justify-content:center;
+}
+.hero-photo img{width:100%;height:100%;object-fit:cover;display:block;position:relative;z-index:2}
+.photo-fallback{
+  position:absolute;font-family:var(--serif);font-size:72px;color:var(--ink-soft);z-index:1;
+}
+.hero-photo.no-img img{display:none}
+@media(max-width:720px){
+  .hero-grid{grid-template-columns:1fr;gap:0}
+  .hero-photo{order:-1;width:120px;height:120px;margin-bottom:26px}
+  .photo-fallback{font-size:44px}
+}
+.hero h1{
+  font-family:var(--serif);
+  font-weight:400;
+  font-size:clamp(48px,9vw,92px);
+  line-height:.98;
+  letter-spacing:-.01em;
+  margin:18px 0 4px;
+}
+.hero h1 em{font-style:italic;color:var(--blue)}
+.hero .role{
+  font-family:var(--mono);
+  font-size:clamp(13px,2.4vw,15px);
+  color:var(--ink-soft);
+  letter-spacing:.01em;
+  margin-top:14px;
+}
+.hero .blurb{
+  font-size:18px;
+  color:var(--ink);
+  max-width:600px;
+  margin-top:26px;
+}
+.now-line{
+  font-family:var(--mono);font-size:12.5px;color:var(--ink-soft);
+  margin-top:12px;display:flex;align-items:center;gap:8px;
+}
+.pulse{
+  width:8px;height:8px;border-radius:50%;background:#2FA463;flex-shrink:0;
+  animation:pulse 2s ease-in-out infinite;
+}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+:is(a,button):focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:4px}
+.meta{
+  display:flex;flex-wrap:wrap;gap:8px 10px;margin-top:30px;
+  font-family:var(--mono);font-size:12.5px;
+}
+.chip{
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:6px 13px;
+  color:var(--ink-soft);
+  background:var(--paper-2);
+  transition:.15s;
+}
+.chip:hover{color:var(--ink);border-color:var(--blue)}
+.chip-pdf{background:var(--blue);color:#fff;border-color:var(--blue)}
+.chip-pdf .ic{color:#fff}
+.chip-pdf:hover{color:#fff;opacity:.88}
+.chip .ic{color:var(--blue);margin-right:6px}
+
+/* ---- stats strip ---- */
+.stats{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border-bottom:1px solid var(--line);
+}
+.stat{padding:26px 24px;border-right:1px solid var(--line)}
+.stat:last-child{border-right:none}
+.stat .num{font-family:var(--serif);font-size:40px;line-height:1;color:var(--ink)}
+.stat .lbl{font-family:var(--mono);font-size:11px;color:var(--ink-soft);margin-top:8px;letter-spacing:.01em}
+@media(max-width:640px){
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .stat:nth-child(2){border-right:none}
+  .stat:nth-child(1),.stat:nth-child(2){border-bottom:1px solid var(--line)}
+}
+
+/* ---- section frame ---- */
+.section{padding:64px 0;border-bottom:1px solid var(--line)}
+.section-head{margin-bottom:36px}
+.section-head h2{
+  font-family:var(--serif);font-weight:400;
+  font-size:clamp(30px,5vw,42px);line-height:1.05;margin-top:10px;
+}
+
+/* ---- TABS (skills) ---- */
+.tabs{
+  display:flex;flex-wrap:wrap;gap:6px;margin-bottom:30px;
+}
+.tab{
+  font-family:var(--mono);font-size:13px;
+  padding:9px 15px;border:1px solid var(--line);
+  border-radius:8px;background:var(--paper-2);
+  color:var(--ink-soft);cursor:pointer;transition:.15s;
+  display:flex;align-items:center;gap:8px;
+}
+.tab:hover{color:var(--ink);border-color:var(--ink-soft)}
+.tab[aria-selected="true"]{
+  background:var(--blue);color:#fff;border-color:var(--blue);
+}
+.tab .idx{opacity:.5;font-size:11px}
+.tab[aria-selected="true"] .idx{opacity:.7}
+
+.panel{display:none;animation:fade .35s ease}
+.panel.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+.panel-grid{
+  display:grid;grid-template-columns:200px 1fr;gap:34px;
+  align-items:start;
+}
+@media(max-width:680px){.panel-grid{grid-template-columns:1fr;gap:20px}}
+.panel-side .token{margin-bottom:12px;display:block}
+.panel-side h3{font-family:var(--serif);font-weight:400;font-size:28px;line-height:1.05}
+.panel-side p{font-size:14.5px;color:var(--ink-soft);margin-top:12px}
+
+.stack{display:flex;flex-wrap:wrap;gap:8px}
+.pill{
+  font-family:var(--mono);font-size:12.5px;
+  padding:7px 12px;border:1px solid var(--line);
+  border-radius:6px;background:var(--paper-2);
+  transition:.15s;
+}
+.pill:hover{border-color:var(--blue);color:var(--blue)}
+
+/* ---- experience ---- */
+.job{
+  display:grid;grid-template-columns:150px 1fr;gap:30px;
+  padding:34px 0;border-top:1px solid var(--line);
+}
+.job:first-of-type{border-top:none}
+@media(max-width:680px){.job{grid-template-columns:1fr;gap:12px}}
+.job-when{font-family:var(--mono);font-size:12.5px;color:var(--ink-soft)}
+.job-when .now{color:var(--blue)}
+.job h3{font-family:var(--serif);font-weight:400;font-size:26px;line-height:1.1}
+.job .co{font-family:var(--mono);font-size:13px;color:var(--blue);margin-top:4px}
+.job .sub{font-size:14.5px;color:var(--ink-soft);margin:12px 0 16px;font-style:italic}
+.job ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+.job li{position:relative;padding-left:20px;font-size:15px}
+.job li::before{
+  content:"▸";position:absolute;left:0;color:var(--blue);font-size:12px;top:3px;
+}
+.job li b{font-weight:600}
+
+/* ---- footer ---- */
+.foot{padding:60px 0 80px;text-align:center}
+.foot .token{display:block;margin-bottom:18px}
+.foot h2{font-family:var(--serif);font-weight:400;font-size:clamp(32px,6vw,52px);line-height:1.02;margin-bottom:24px}
+.foot h2 em{font-style:italic;color:var(--blue)}
+.foot .links{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;font-family:var(--mono);font-size:14px}
+.foot .links a{
+  border:1px solid var(--line);border-radius:8px;padding:11px 18px;
+  background:var(--paper-2);transition:.15s;
+}
+.foot .links a:hover{border-color:var(--blue);color:var(--blue)}
+.copyright{font-family:var(--mono);font-size:11px;color:var(--ink-soft);margin-top:40px}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="brand">amer<span class="dot">.</span>sh</div>
+    <nav class="topnav">
+      <a href="#skills">skills</a>
+      <a href="#work">experience</a>
+      <a href="https://github.com/AbdulrahmanXAmer" target="_blank" rel="noopener">github ↗</a>
+      <a href="#contact">contact</a>
+    </nav>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+   <div class="hero-copy">
+    <span class="token"><span class="brk">{ </span>software_engineer · solutions_architect · devops · ml<span class="brk"> }</span></span>
+    <h1>Abdulrahman<br>Amer</h1>
+    <div class="role">platform · cloud · integrations — 6+ yrs shipping to prod</div>
+    <div class="now-line"><span class="pulse"></span>Currently: Platform &amp; Integrations @ Flywire</div>
+    <p class="blurb">I own systems end-to-end — from approved RFCs and cloud architecture to resilient, self-healing production services. I decompose monoliths into event-driven microservices, design HIPAA-compliant infrastructure, and build the platforms that let entire teams move faster.</p>
+    <div class="meta">
+      <a class="chip chip-pdf" href="resume.pdf" download><span class="ic">↓</span>Résumé (PDF)</a>
+      <span class="chip"><span class="ic">◆</span>Brooklyn, NY</span>
+      <a class="chip" href="mailto:rocky11229@gmail.com"><span class="ic">✉</span>rocky11229@gmail.com</a>
+      <a class="chip" href="tel:+13477854017"><span class="ic">☏</span>+1 347-785-4017</a>
+      <a class="chip" href="https://github.com/AbdulrahmanXAmer" target="_blank" rel="noopener"><span class="ic">⌥</span>github/AbdulrahmanXAmer</a>
+      <a class="chip" href="#"><span class="ic">↗</span>LinkedIn</a>
+    </div>
+   </div>
+   <div class="hero-photo">
+     <img src="profile.jpg" alt="Abdulrahman Amer" onerror="this.parentNode.classList.add('no-img')">
+     <span class="photo-fallback">AA</span>
+   </div>
+  </div>
+</header>
+
+<section class="stats">
+  <div class="stat"><div class="num">20k+</div><div class="lbl">hotels served</div></div>
+  <div class="stat"><div class="num">40%</div><div class="lbl">delivery velocity ↑</div></div>
+  <div class="stat"><div class="num">500k</div><div class="lbl">peak monthly users</div></div>
+  <div class="stat"><div class="num">120</div><div class="lbl">days: concept→live</div></div>
+</section>
+
+<main>
+<section class="section" id="skills">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="token"><span class="brk">// </span>select a domain</span>
+      <h2>What I work in</h2>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="Skill domains">
+      <button class="tab" role="tab" aria-selected="true" data-panel="p-fe"><span class="idx">01</span>Frontend</button>
+      <button class="tab" role="tab" aria-selected="false" data-panel="p-be"><span class="idx">02</span>Backend</button>
+      <button class="tab" role="tab" aria-selected="false" data-panel="p-ops"><span class="idx">03</span>DevOps / SRE</button>
+      <button class="tab" role="tab" aria-selected="false" data-panel="p-cloud"><span class="idx">04</span>Cloud</button>
+      <button class="tab" role="tab" aria-selected="false" data-panel="p-ml"><span class="idx">05</span>Machine Learning</button>
+      <button class="tab" role="tab" aria-selected="false" data-panel="p-ai"><span class="idx">06</span>AI</button>
+    </div>
+
+    <div class="panel active" id="p-fe" role="tabpanel">
+      <div class="panel-grid">
+        <div class="panel-side">
+          <span class="token"><span class="brk">[ </span>frontend<span class="brk"> ]</span></span>
+          <h3>Interfaces</h3>
+          <p>Dashboards that removed friction between support, CS, and customers.</p>
+        </div>
+        <div class="stack">
+          <span class="pill">React</span><span class="pill">Next.js</span><span class="pill">Angular</span>
+          <span class="pill">TypeScript</span><span class="pill">Vite</span><span class="pill">HTML</span>
+          <span class="pill">CSS</span><span class="pill">State Management</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel" id="p-be" role="tabpanel">
+      <div class="panel-grid">
+        <div class="panel-side">
+          <span class="token"><span class="brk">[ </span>backend<span class="brk"> ]</span></span>
+          <h3>Services</h3>
+          <p>Event-driven microservices with saga, inbox/outbox, circuit breakers, and DLQ retry.</p>
+        </div>
+        <div class="stack">
+          <span class="pill">Java</span><span class="pill">Spring Boot</span><span class="pill">Go</span>
+          <span class="pill">Rust</span><span class="pill">Express</span><span class="pill">Flask</span>
+          <span class="pill">Django</span><span class="pill">FastAPI</span><span class="pill">.NET</span>
+          <span class="pill">Node.js</span><span class="pill">REST</span><span class="pill">SOAP</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel" id="p-ops" role="tabpanel">
+      <div class="panel-grid">
+        <div class="panel-side">
+          <span class="token"><span class="brk">[ </span>devops_sre<span class="brk"> ]</span></span>
+          <h3>Pipelines &amp; signals</h3>
+          <p>Zero-downtime deploys, incident playbooks, kill switches, distributed tracing.</p>
+        </div>
+        <div class="stack">
+          <span class="pill">GitHub Actions</span><span class="pill">Terraform</span><span class="pill">Docker</span>
+          <span class="pill">Datadog</span><span class="pill">Sumo Logic</span><span class="pill">Honeycomb</span>
+          <span class="pill">CloudWatch</span><span class="pill">Jaeger</span><span class="pill">CI/CD</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel" id="p-cloud" role="tabpanel">
+      <div class="panel-grid">
+        <div class="panel-side">
+          <span class="token"><span class="brk">[ </span>cloud<span class="brk"> ]</span></span>
+          <h3>Infrastructure</h3>
+          <p>Defense-in-depth architecture across providers: private networking, least-privilege access, and compliant, multi-tenant platforms built to isolate sensitive data.</p>
+        </div>
+        <div class="stack">
+          <span class="pill">AWS</span><span class="pill">GCP</span><span class="pill">OCI</span>
+          <span class="pill">Azure</span><span class="pill">Cloudflare</span>
+          <span class="pill">Cloud Architecture</span><span class="pill">Cross-VPC Networking</span>
+          <span class="pill">Defense-in-Depth</span><span class="pill">Least-Privilege IAM</span>
+          <span class="pill">Multi-Tenant Design</span><span class="pill">HIPAA Compliance</span>
+          <span class="pill">Cost Optimization</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel" id="p-ml" role="tabpanel">
+      <div class="panel-grid">
+        <div class="panel-side">
+          <span class="token"><span class="brk">[ </span>machine_learning<span class="brk"> ]</span></span>
+          <h3>Models</h3>
+          <p>NLP lead-ranking in production; self-hosted LLMs for privacy and economics.</p>
+        </div>
+        <div class="stack">
+          <span class="pill">Pandas</span><span class="pill">scikit-learn</span><span class="pill">imblearn</span>
+          <span class="pill">TensorFlow</span><span class="pill">PyTorch</span><span class="pill">NLP</span>
+          <span class="pill">Random Forest</span><span class="pill">XGBoost</span><span class="pill">CNN</span>
+          <span class="pill">RNN</span><span class="pill">MLflow</span><span class="pill">HuggingFace</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel" id="p-ai" role="tabpanel">
+      <div class="panel-grid">
+        <div class="panel-side">
+          <span class="token"><span class="brk">[ </span>artificial_intelligence<span class="brk"> ]</span></span>
+          <h3>Applied AI</h3>
+          <p>Coached a 6-person team on Claude Code — 40% velocity gain over two quarters.</p>
+        </div>
+        <div class="stack">
+          <span class="pill">Claude</span><span class="pill">Claude Code</span><span class="pill">ChatGPT</span>
+          <span class="pill">Gemini</span><span class="pill">Bedrock</span><span class="pill">Vertex AI</span>
+          <span class="pill">Self-hosted LLMs</span><span class="pill">MLOps</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="work">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="token"><span class="brk">// </span>track record</span>
+      <h2>Experience</h2>
+    </div>
+
+    <div class="job">
+      <div class="job-when">Feb 2024<br>— <span class="now">Present</span><br><br>New York, NY</div>
+      <div class="job-body">
+        <h3>Software Engineer — Platform &amp; Integrations</h3>
+        <div class="co">Flywire</div>
+        <div class="sub">Technical owner for the Travel Integration Platform's core API and cross-team connectivity layer.</div>
+        <ul>
+          <li><b>Platform architecture &amp; RFC ownership:</b> Owned a greenfield integration API from RFC to production — replacing a legacy on-prem monolith with a cloud-native, event-driven system serving 20,000+ hotels across document signing, payments, and Salesforce ↔ Oracle Opera Cloud/OHIP sync.</li>
+          <li><b>Resilience &amp; self-healing:</b> Engineered inbox/outbox patterns, DLQ with retry-visibility logic, and time-boxed requeue handling. Zero manual intervention for network, tenant, or provider failures since launch.</li>
+          <li><b>Per-tenant circuit breaking:</b> Built a Redis-backed circuit breaker with custom per-tenant health-scoring that isolates one unhealthy tenant from bricking the platform.</li>
+          <li><b>Business impact:</b> Enabled customer migration off legacy Sertifi; the resilient design helped land Hilton and Marriott migrations two months ahead of schedule.</li>
+          <li><b>Technical leadership:</b> Drove a 40% increase in team delivery velocity over two quarters by coaching a 6-person team on Claude Code and niche integration knowledge. Sole maintainer across 7 projects.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="job-when">Mar 2025<br>— Aug 2025<br><br>New York, NY</div>
+      <div class="job-body">
+        <h3>Fractional Director of Engineering</h3>
+        <div class="co">Predicate</div>
+        <div class="sub">Founding engineering leader reporting directly to the C-suite; built the team, platform, and culture from zero.</div>
+        <ul>
+          <li><b>Product &amp; platform foundation:</b> Built the entire engineering foundation for a platform ingesting sensor data into a data lake so doctors can remotely monitor patients at home — concept to live product with 7 signed customers in under 120 days.</li>
+          <li><b>HIPAA-compliant architecture:</b> Architected a defense-in-depth AWS environment — private subnets, VPC endpoints, token auth, least-privilege — with compliance secured through BAAs.</li>
+          <li><b>Self-hosted ML:</b> Deployed a self-hosted LLM for multi-modal audio analysis — HIPAA-grade privacy, 70% cheaper per request, and more accurate than the commercial alternative.</li>
+          <li><b>Partnerships &amp; funding:</b> Helped secure a Mayo Clinic partnership and North Carolina governmental funding via the platform MVP.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="job-when">Jan 2020<br>— Jan 2024<br><br>New York, NY</div>
+      <div class="job-body">
+        <h3>Software Engineer — Full-Stack &amp; DevOps</h3>
+        <div class="co">ROSNYC</div>
+        <div class="sub">Grew from entry-level contributor to technical owner of the platform's CRM, infrastructure, and lead-intelligence systems.</div>
+        <ul>
+          <li><b>Scale &amp; availability:</b> Maintained a real estate platform serving 200,000+ monthly users, peaking near 500,000 in summer — keeping lead-ingestion and ad-revenue surfaces highly available through peak load.</li>
+          <li><b>Containerization &amp; auto-scaling:</b> Decomposed a legacy monolithic PHP app into containerized microservices with tuned auto-scaling — 30% lower off-peak latency and no more peak-season crashes.</li>
+          <li><b>CI/CD modernization:</b> Replaced a fragile FTP edit-in-production workflow with a proper merge-request pipeline in GitHub Actions — builds, tests, audit steps, and pressure-test gates before merge.</li>
+          <li><b>NLP lead intelligence:</b> Built a "hot lead" ranking system surfacing the top prospects by budget using automated replies and info-gathering strategies.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="token"><span class="brk">// </span>credentials</span>
+      <h2>Certifications &amp; education</h2>
+    </div>
+    <div class="stack">
+      <span class="pill">AWS Certified Cloud Practitioner — 2024</span>
+      <span class="pill">MFA Jazz Performance, GPA 4.0 — Manhattan School of Music</span>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot" id="contact">
+  <div class="wrap">
+    <span class="token"><span class="brk">{ </span>let's_build<span class="brk"> }</span></span>
+    <h2>Have a system that needs<br><em>owning end-to-end?</em></h2>
+    <div class="links">
+      <a href="mailto:rocky11229@gmail.com">rocky11229@gmail.com</a>
+      <a href="resume.pdf" download>Résumé ↓</a>
+      <a href="tel:+13477854017">+1 347-785-4017</a>
+      <a href="https://github.com/AbdulrahmanXAmer" target="_blank" rel="noopener">GitHub ↗</a>
+      <a href="#">LinkedIn ↗</a>
+    </div>
+    <div class="copyright">© 2026 Abdulrahman Amer</div>
+  </div>
+</footer>
+
+<script>
+const tabs = document.querySelectorAll('.tab');
+const panels = document.querySelectorAll('.panel');
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    tabs.forEach(t => t.setAttribute('aria-selected','false'));
+    panels.forEach(p => p.classList.remove('active'));
+    tab.setAttribute('aria-selected','true');
+    document.getElementById(tab.dataset.panel).classList.add('active');
+  });
+  tab.addEventListener('keydown', e => {
+    const arr = [...tabs];
+    const i = arr.indexOf(tab);
+    if(e.key==='ArrowRight'){e.preventDefault();arr[(i+1)%arr.length].focus();arr[(i+1)%arr.length].click();}
+    if(e.key==='ArrowLeft'){e.preventDefault();arr[(i-1+arr.length)%arr.length].focus();arr[(i-1+arr.length)%arr.length].click();}
+  });
+});
+</script>
+</body>
+</html>
